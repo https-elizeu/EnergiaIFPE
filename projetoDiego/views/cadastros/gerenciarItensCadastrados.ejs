@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs');-%>
+<%- include('../partials/nav.ejs');-%>
+<div class="container" id="backBranco">
+    <h2>Gerenciar Itens Cadastrados</h2>
+    
+    <ul class="nav nav-tabs" >
+        <li class="nav-item" id="linkGui">
+          <a class="nav-link active" aria-current="page" href="/gerenciar-itens-cadastrados" style="color: crimson;">Equipamentos cadastrados</a>
+        </li>
+        <li class="nav-item" id="linkGui">
+          <a class="nav-link" href="/gerenciar-ambientes-cadastrados" >ambientes cadastrados</a>
+        </li>
+    </ul> 
+
+    <%- include('../partials/arvore4.ejs');-%> 
+
+    <%- include('../partials/gerente.ejs');-%>
+
+    <%- include('../partials/dialogo1.ejs');-%>
+
+</div>
+<%- include('../partials/footer.ejs');-%>

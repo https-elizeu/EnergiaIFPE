@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs');-%>
+<%- include('../partials/nav2.ejs');-%>
+<div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="loginUserAcess" method="post">
+            <div class="user-box">
+                <input type="text" name="userName" required="">
+                <label for="">Usuário</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="userPassword" id="" required="">
+                <label for="">Senha</label>
+            </div>
+            <button>
+                ENTRAR
+            </button>
+    
+            <a href="/cadastro-de-usuario">
+                CADASTRAR-SE
+            </a>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs');-%>

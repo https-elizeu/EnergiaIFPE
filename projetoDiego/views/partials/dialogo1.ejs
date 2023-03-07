@@ -1,0 +1,33 @@
+<!-- Um dialog simples contendo um form -->
+
+<dialog open id="favDialog"> 
+    <form method="dialog">
+        Realmente deseja escluir os itens a seguir: <br>
+        <% terminais.forEach(function(terminais){%> 
+            <br>
+            <%= terminais.nome%> 
+        <% }) %>
+        <menu>
+            <button type="submit" class="btn btn-success">Confirmar</button>
+            <button id="cancel" type="reset" class="btn btn-danger">Cancelar</button>  
+        </menu>
+    </form>
+</dialog>
+
+<script>
+(function() {
+  var updateButton = document.getElementById('updateDetails');
+  var cancelButton = document.getElementById('cancel');
+  var favDialog = document.getElementById('favDialog');
+
+  // O botão Update abre uma Dialog
+    updateButton.addEventListener('click', function() {
+        favDialog.showModal();
+    });
+
+    // O botão cancelButtom fecha uma Dialog
+    cancelButton.addEventListener('click', function() {
+        favDialog.close();
+    });
+})();
+</script>

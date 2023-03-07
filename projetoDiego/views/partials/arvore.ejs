@@ -1,0 +1,41 @@
+<!--  
+<div class="container">
+
+    <% arvore.forEach(function(arvore){ %>    
+        <% if (arvore.anterior == 1) { %>
+            
+            <button onclick=""><input type="checkbox" name="" id=""><%= arvore.nome %></button><br>
+        <% } %>     
+    <% }); %>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>id</td>
+                <td>anterior</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% arvore.forEach(function(arvore){ %>
+            <tr>                
+                <td><%= arvore.nome %></td>
+                <td><%= arvore.id %></td>  
+                <td><%= arvore.anterior %></td>   
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <br>
+
+    <% arvore.forEach(function(arvore){ %>    
+        <% if (arvore.anterior == num1) { %>
+            <button onclick="mudarvalor(arvore.id)">
+                <input type="checkbox" name="" id=""><%= arvore.nome %>
+            </button><br>
+        <% } %>     
+    <% }); %>
+</div>
+-->
+
+

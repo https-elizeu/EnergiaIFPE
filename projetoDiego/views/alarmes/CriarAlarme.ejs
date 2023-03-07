@@ -1,0 +1,105 @@
+<%- include('../partials/header.ejs');-%>
+    <%- include('../partials/nav.ejs');-%>
+        <div class="container" id="backVerde">
+            <h2>Local do Alarme</h2>
+            <br>
+
+
+            <form action="salvarAlarme" method="post">
+                <div class="bordaBr">
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Nome do alarme </label>
+                            <br>
+                            <input type="text" class="form-control" placeholder="Nome" name="nome">
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="col">
+                            <div id="HorarioInicial">
+                                <label>Horário inicial </label>
+                                <br>
+                                <input type="time" class="form-control" placeholder="Horário inicial" name="horario1">
+                            </div>
+
+                            <div id="HorarioFinal">
+                                <label>Horário final </label>
+                                <br>
+                                <input type="time" class="form-control" placeholder="Horário final" name="horario2">
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <br>
+
+                        <div class="col">
+                            <div id="DataStyle">
+                                <label>Data </label>
+                                <br>
+                                <input type="date" class="form-control" name="data">
+
+                            </div>
+
+                            <div id="SelecionarStyle">
+                                <label for="">Repetir</label>
+                                <br>
+                                <div class="form-control">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Selecionar</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+
+                                    <div id="checkboxes">
+                                        <label for="domingo">
+                                            <input type="checkbox" id="domingo" />Domingo</label>
+                                        <label for="segunda">
+                                            <input type="checkbox" id="segunda" />Seunda</label>
+                                        <label for="terca">
+                                            <input type="checkbox" id="terca" />Terça</label>
+                                        <label for="quarta">
+                                            <input type="checkbox" id="quarta" />Quarta</label>
+                                        <label for="quinta">
+                                            <input type="checkbox" id="quinta" />Quinta</label>
+                                        <label for="sexta">
+                                            <input type="checkbox" id="sexta" />Sexta</label>
+                                        <label for="sabado">
+                                            <input type="checkbox" id="sabado" />Sábado</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                    <br>
+
+                    <button class="btn btn-success" type="submit">SALVAR</button>
+                    <button class="btn btn-danger">CANCELAR</button>
+
+                    <br>
+            </form>
+        </div>
+
+        <br>
+        <script>
+            var expanded = false;
+
+            function showCheckboxes() {
+                var checkboxes = document.getElementById("checkboxes");
+                if (!expanded) {
+                    checkboxes.style.display = "block";
+                    expanded = true;
+                } else {
+                    checkboxes.style.display = "none";
+                    expanded = false;
+                }
+            }
+        </script>
+        <%- include('../partials/footer.ejs');-%>

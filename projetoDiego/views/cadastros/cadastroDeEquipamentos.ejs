@@ -1,0 +1,119 @@
+<%- include('../partials/header.ejs');-%>
+<%- include('../partials/nav.ejs');-%>
+<div class="container" id="backVerde">
+  <h2>Cadastrar Equipamentos</h2>
+  <br>
+    <form>
+        <div class="form-row">
+            <div class="col">
+              <div class="bordaBr" >
+                <div>Nome do equipamento
+                    <input type="text" class="form-control" placeholder="Nome" >
+                </div>
+            </div>
+            </div>
+  
+            <div class="bordaBr">
+              <label for="">Tipo de equipamento </label> 
+              <br>
+                <div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="#">multe-midia</option>
+                    <option value="#">refrigeração</option>
+                    <option value="#">eletro-domestico</option>
+                </select>
+                </div>
+                
+            <input type="checkbox" name="" onclick="Mudarestado('minhaDiv')" id="termos_de_contrato">
+            <label for="">outro tipo</label>
+            
+                <div id="minhaDiv">
+                    <form action="">
+                        <input type="text" class="form-control" placeholder="Nome" required>
+                        <br>
+                        <button type="button" class="btn btn-success">CADASTRAR</button>
+                      </form>
+                </div>
+        </div>
+
+        <div class="bordaBr">
+           
+           <div class="col">
+                <div id="largura1"><h3>Associar a um terminal</h3>
+                </div>
+                <div id="largura2">Quantidade de quipamentos:
+                    <input type="text" class="form-control" placeholder="quantidade" >
+                </div>
+            </div>
+            <br>
+            
+            <div class="col">
+                  
+                  
+            </div>
+
+            <div>
+            Local do terminal
+                <%- include('../partials/arvore4.ejs');-%>
+            </div>
+            
+            <div>
+                Terminais nesse local
+                <div class="meiaDiv" >
+                
+                </div>
+            </div>
+            
+            
+            <div id="largura1">nome do terminal que será associado
+                <input type="text" class="form-control" placeholder="Nome" >
+            </div>
+            <div id="largura2">Quantidade
+                <input type="text" class="form-control" placeholder="quantidade" >
+            </div> <br><br>
+                <a href="/" class="btn btn-success">
+                    ASSOCIAR
+                </a> <br><br>
+ 
+                <label for="">Equipamentos associados </label>
+                <div class="meiaDiv" id="largura3">
+                    <% for(i = 1; i <= 7 ; i++){ %>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Nome do local" aria-label="Username">
+                            <input type="text" class="form-control" placeholder="Nome do terminal" aria-label="Server">
+                            <input type="text" class="form-control" placeholder="Quantidade" aria-label="Server">
+                            <span class="input-group-text">
+                                <% if(false){%> 
+                                    <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                                <%} else{ %>
+                                    <button class="btn btn-danger"><i class="bi bi-dash-circle"></i></button>
+                                <%}%></span>
+                          </div>
+                    <% }%>
+                </div>
+        </div>
+
+        <br>
+            <a href="/" class="btn btn-success">
+                FINALIZAR CADASTRAR
+            </a>
+        
+            <a href="/" class="btn btn-danger">
+                CANCELAR
+            </a>
+    </form>
+</div>
+<br>
+
+<script>                    
+    function Mudarestado(el) {
+        let checkbox = document.getElementById('termos_de_contrato');
+        var display = document.getElementById(el).style.display;
+            if(checkbox.checked)
+                document.getElementById(el).style.display = 'block'; 
+            else
+                document.getElementById(el).style.display = 'none';
+            }
+
+    </script>
+<%- include('../partials/footer.ejs');-%>

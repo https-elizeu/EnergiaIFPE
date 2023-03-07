@@ -1,0 +1,57 @@
+<div> 
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">nome do terminal</th>
+            <th scope="col">Descrição</th>
+            <th scope="col"></th>
+            <th scope="col">
+                <button class="btn btn-success" id="moverItem" >Mover item/s</button>
+                <button id="updateDetails" class="btn btn-danger" >Excluir</button>   
+             <!--<input type="button" value="Excluir" class="btn btn-danger" onclick="funcao1()"> -->   
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% terminais.forEach(function(terminais){%> 
+                <tr>
+                    <td><%= terminais.nome%></td>
+                    <td><%= terminais.descricao%></td>
+                    <td><a class="btn btn-warning" href="/editar-equipamento">Editar</a></td>
+                    <td><input type="checkbox" name="" onclick="abilitar()" id="loc">
+                    </td>
+                </tr> 
+            <% }) %>
+          </tr>
+        </tbody>
+      </table>
+<script>
+    let input = document.querySelector(".input");
+    let button = document.querySelector(".button");
+    button.disabled = true;
+    input.addEventListener("change", stateHandle);
+    function stateHandle() {
+        if (document.querySelector(".input").value === "") {
+            button.disabled = true; 
+        } else {
+            button.disabled = false;
+        }
+    }
+
+    function abilitar(){
+    let checkbox = document.getElementById('loc');
+    var desa1 = document.getElementById('updateDetails').disabled;
+    var desa2 = document.getElementById('moverItem').disabled;
+
+    if(checkbox.checked)
+        desa1.disabled = false, 
+        desa2.disabled = false;
+    else
+        
+        desa1.disabled = true, 
+        desa2.disabled = true;
+    }
+    </script>
+</div>

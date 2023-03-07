@@ -1,0 +1,131 @@
+<%- include('../partials/header.ejs');-%>
+<%- include('../partials/nav.ejs');-%>
+<div class="container" id="backVerde">
+  <h2>Cadastrar Ambiente</h2>
+  <br>
+    <form action="cadastroAmbienteSave" method="post">
+        <div class="form-row">
+            <div class="col">
+                <label for="">Nome do ambiente</label>
+                <br>
+              <input type="text" class="form-control" placeholder="Nome" name="nomeAmbiente">
+            </div>
+            <br>
+
+
+          
+
+
+
+            <div class="bordaBr">
+                <label for="">Tipo de ambiente </label> 
+                <br>
+                  <div>
+                    <select class="form-select" aria-label="Default select example" name="tipoAmbiente">
+                        <option selected value="bloco">bloco</option>
+                        <option value="sala">sala</option>
+                        <option value="laboratorio">laboratorio</option>
+                        <option value="banheiro">banheiro</option>
+                    </select>
+                  </div>
+
+                <input type="checkbox" name="marca1" onclick="Mudarestado('minhaDiv')" id="termos_de_contrato">
+                <label for="">outro tipo</label>
+                <div id="minhaDiv">
+                    <!--<form action="cadastroTipo" method="post">-->
+                        <input type="text" class="form-control" placeholder="Nome" required name="tipodeAm">
+                    <!--</form>--> 
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="bordaBr">
+                Associar a um ambiente ? 
+                <input type="checkbox" name="" onclick="Mudarestado1('lista')" id="check2"> Sim
+                <div class="bordaBr" id="lista">
+                    <%- include('../partials/arvore4.ejs');-%>
+    
+                    <label for="">Associar a esse ambiente </label>
+                    <input type="text" class="form-control" placeholder="Nome" ><br>
+                </div>
+            </div>
+    
+            <div class="bordaBr" >
+                Adicionar terminais <br><br>
+    
+                    Nome do terminais
+                    <div class="meiaDiv">
+                        <% for(i = 1; i <= 1 ; i++){ %>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="nome do terminal" aria-label="Username">
+                                <input type="text" class="form-control" placeholder="ID do terminal" aria-label="Server">
+                                <span class="input-group-text">
+                                    <% if(false){%> 
+                                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                                    <%} else{ %>
+                                        <button class="btn btn-danger"><i class="bi bi-dash-circle"></i></button>
+                                    <%}%></span>
+                              </div>
+                        <% }%>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="nome do terminal" aria-label="Username" disabled>
+                            <input type="text" class="form-control" placeholder="ID do terminal" aria-label="Server" disabled>
+                            <span class="input-group-text">
+                            <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button></span>
+                        </div>
+                    </div>
+    
+                    Terminais não cadastrados
+                    <div class="meiaDiv">
+                        <% for(i = 1; i <= 2 ; i++){ %>
+                            <input type="text" class="form-control" placeholder="Nome" ><br> 
+                        <% }%>
+                    </div>    
+            </div>
+    
+
+
+
+
+
+            
+
+
+        <br>
+            <button class="btn btn-success">
+                CADASTRAR
+            </button>
+        
+            <a href="/" class="btn btn-danger">
+                CANCELAR
+            </a>
+    </form>
+</div>
+<br>
+
+<script>                    
+    function Mudarestado(el) {
+        let checkbox = document.getElementById('termos_de_contrato');
+        var display = document.getElementById(el).style.display;
+            if(checkbox.checked)
+                document.getElementById(el).style.display = 'block'; 
+            else
+                document.getElementById(el).style.display = 'none';
+            }
+
+        
+    function Mudarestado1(el) {
+        let checkbox = document.getElementById('check2');
+        var display = document.getElementById(el).style.display;
+            if(checkbox.checked)
+                document.getElementById(el).style.display = 'block'; 
+            else
+                document.getElementById(el).style.display = 'none';
+    }
+    </script>
+<%- include('../partials/footer.ejs');-%>
