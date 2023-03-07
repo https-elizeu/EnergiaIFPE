@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 const conection = require("./dataBase/db")
 const alarme = require("./Alarmes");
 const Alarme = require('./Alarmes');
-
+// teste
 conection
   .authenticate()
   .then(() => {
